@@ -1,4 +1,5 @@
-// Criar caixas e suas repectivas cores
+// ================ Criar caixas e suas repectivas cores ================================ 
+
 function createBoxColors(number) {
   const color = ['firstBox', 'secondBox', 'thirdBox', 'fourthBox', 'fifthBox', 'sixthBox'];
   const paletteUl = document.getElementById('color-palette');
@@ -11,5 +12,17 @@ function createBoxColors(number) {
 }
 
 createBoxColors(4);
+
+// ========================== Create Pixel Board ===================================
+
+function createPixelsBoard(number) {
+  const pixelBoard = document.getElementById('pixel-board');
+  for (let index = 0; index < number; index += 1) {
+    const pixel = document.createElement('div');
+    pixelBoard.appendChild(pixel);
+    pixel.className = 'pixel';
+  }
+}
+createPixelsBoard(25);
 // colorLi.classList.add = 'firstBox';
 // Cores das caixas

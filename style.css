@@ -46,3 +46,16 @@ header {
   background-color: white;
 }
 
+#pixel-board {
+  margin-left: 40px;
+  width: 15%;
+}
+
+.pixel {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  border: black solid 1px;
+}
+
