@@ -1,0 +1,48 @@
+* {
+  border: 0;
+  margin-left: 0;
+}
+
+header {
+  width: 100vw;
+  background-color: aqua;
+}
+
+#color-palette-container {
+  display: inline-block;
+  width: 100vw;
+  background-color: aqua;
+}
+
+.color {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-right: 2px;
+  border: 1px solid black;
+}
+
+.firstBox {
+  background-color: black;
+}
+
+.secondBox {
+  background-color: red;
+}
+
+.thirdBox {
+  background-color: yellow;
+}
+
+.fourthBox {
+  background-color: green;
+}
+
+.fifthBox {
+  background-color: rgb(245, 223, 195);
+}
+
+.sixthBox {
+  background-color: white;
+}
+
