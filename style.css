@@ -22,27 +22,27 @@ header {
   border: 1px solid black;
 }
 
-.firstBox {
+div .firstBox {
   background-color: black;
 }
 
-.secondBox {
+div .secondBox {
   background-color: red;
 }
 
-.thirdBox {
+div .thirdBox {
   background-color: yellow;
 }
 
-.fourthBox {
+div .fourthBox {
   background-color: green;
 }
 
-.fifthBox {
+div .fifthBox {
   background-color: rgb(245, 223, 195);
 }
 
-.sixthBox {
+div .sixthBox {
   background-color: white;
 }
 

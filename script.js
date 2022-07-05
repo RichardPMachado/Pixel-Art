@@ -1,11 +1,13 @@
 const numBoxColor = 4;
+const numBox = 25;
 // ================ Criar caixas e suas repectivas cores ================================
 
+const color = ['firstBox', 'secondBox', 'thirdBox', 'fourthBox', 'fifthBox', 'sixthBox'];
+let colorLi = [];
 function createBoxColors(number) {
-  const color = ['firstBox', 'secondBox', 'thirdBox', 'fourthBox', 'fifthBox', 'sixthBox'];
   const paletteUl = document.getElementById('color-palette');
   for (let index = 0; index < number; index += 1) {
-    const colorLi = document.createElement('li');
+    colorLi = document.createElement('li');
     paletteUl.appendChild(colorLi);
     colorLi.className = 'color';
     colorLi.classList.add(color[index]);
@@ -28,21 +30,33 @@ function createPixelsBoard(number) {
     pixel.className = 'pixel';
   }
 }
-createPixelsBoard(25);
+createPixelsBoard(numBox);
 
 // ========================== Check Class Selected ===================================
-const colorLi = document.querySelectorAll('.color');
+const colorsLi = document.querySelectorAll('.color');
 function selectedColor(event) {
   for (let index = 0; index < numBoxColor; index += 1) {
-    if (colorLi[index].classList.contains('selected')) {
-      colorLi[index].classList.remove('selected');
+    if (colorsLi[index].classList.contains('selected')) {
+      colorsLi[index].classList.remove('selected');
     }
   }
+  // sobre o toggle https://developer.mozilla.org/pt-BR/docs/Web/API/Element/classList
   event.target.classList.add('selected');
 }
 for (let index = 0; index < numBoxColor; index += 1) {
-  colorLi[index].addEventListener('click', selectedColor);
+  colorsLi[index].addEventListener('click', selectedColor);
 }
 
-// colorLi.classList.add = 'firstBox';
-// Cores das caixas
+// ========================== Add Color Class Selected ===================================
+const pixel = document.querySelectorAll('.pixel');
+function addColor(event) {
+  for (let index = 0; index < 4; index += 1) {
+    if (colorsLi[index].classList.contains('selected')) {
+      event.target.classList.toggle(color[index]);
+    }
+  }
+}
+
+for (let index = 0; index < numBox; index += 1) {
+  pixel[index].addEventListener('click', addColor);
+}
