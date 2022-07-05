@@ -46,6 +46,10 @@ header {
   background-color: white;
 }
 
+#color-palette .selected:hover {
+  border: white;
+}
+
 #pixel-board {
   width: 100vw;
   padding-left: 40px;

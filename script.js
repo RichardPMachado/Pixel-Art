@@ -1,3 +1,4 @@
+const numBoxColor = 4;
 // ================ Criar caixas e suas repectivas cores ================================
 
 function createBoxColors(number) {
@@ -8,10 +9,14 @@ function createBoxColors(number) {
     paletteUl.appendChild(colorLi);
     colorLi.className = 'color';
     colorLi.classList.add(color[index]);
+    // ========================== Create Class Selected ===================================
+    if (color[index] === 'firstBox') {
+      colorLi.classList.add('selected');
+    }
   }
 }
 
-createBoxColors(4);
+createBoxColors(numBoxColor);
 
 // ========================== Create Pixel Board ===================================
 
@@ -25,14 +30,19 @@ function createPixelsBoard(number) {
 }
 createPixelsBoard(25);
 
-// ========================== Create Class Selected ===================================
-
-const blackBox = document.querySelector('.firstBox');
-blackBox.classList.add('selected');
-
 // ========================== Check Class Selected ===================================
-
-
+const colorLi = document.querySelectorAll('.color');
+function selectedColor(event) {
+  for (let index = 0; index < numBoxColor; index += 1) {
+    if (colorLi[index].classList.contains('selected')) {
+      colorLi[index].classList.remove('selected');
+    }
+  }
+  event.target.classList.add('selected');
+}
+for (let index = 0; index < numBoxColor; index += 1) {
+  colorLi[index].addEventListener('click', selectedColor);
+}
 
 // colorLi.classList.add = 'firstBox';
 // Cores das caixas
