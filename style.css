@@ -47,8 +47,12 @@ header {
 }
 
 #pixel-board {
-  margin-left: 40px;
-  width: 15%;
+  width: 100vw;
+  padding-left: 40px;
+  display: grid;
+  grid-template-columns: repeat(5, 41px);
+  grid-template-rows: repeat(5, 41px);
+  background-color: rgb(138, 219, 219);
 }
 
 .pixel {

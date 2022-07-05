@@ -1,4 +1,4 @@
-// ================ Criar caixas e suas repectivas cores ================================ 
+// ================ Criar caixas e suas repectivas cores ================================
 
 function createBoxColors(number) {
   const color = ['firstBox', 'secondBox', 'thirdBox', 'fourthBox', 'fifthBox', 'sixthBox'];
@@ -24,5 +24,15 @@ function createPixelsBoard(number) {
   }
 }
 createPixelsBoard(25);
+
+// ========================== Create Class Selected ===================================
+
+const blackBox = document.querySelector('.firstBox');
+blackBox.classList.add('selected');
+
+// ========================== Check Class Selected ===================================
+
+
+
 // colorLi.classList.add = 'firstBox';
 // Cores das caixas
