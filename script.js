@@ -1,5 +1,6 @@
 const numBoxColor = 4;
-const numBox = 25;
+const size = 5;
+const numBox = size * size;
 // ================ Criar caixas e suas repectivas cores ================================
 
 const color = ['firstBox', 'secondBox', 'thirdBox', 'fourthBox', 'fifthBox', 'sixthBox'];
@@ -22,8 +23,9 @@ createBoxColors(numBoxColor);
 
 // ========================== Create Pixel Board ===================================
 
+const pixelBoard = document.getElementById('pixel-board');
 function createPixelsBoard(number) {
-  const pixelBoard = document.getElementById('pixel-board');
+  pixelBoard.style.setProperty('--size', size);
   for (let index = 0; index < number; index += 1) {
     const pixel = document.createElement('div');
     pixelBoard.appendChild(pixel);
@@ -60,3 +62,14 @@ function addColor(event) {
 for (let index = 0; index < numBox; index += 1) {
   pixel[index].addEventListener('click', addColor);
 }
+
+// ========================== Clear Board ===================================
+const clearBtn = document.getElementById('clear-board');
+const pixelClear = document.querySelectorAll('.pixel');
+
+function clearBoard() {
+  for (let index = 0; index < numBox; index += 1) {
+    pixelClear[index].className = 'pixel';
+  }
+}
+clearBtn.addEventListener('click', clearBoard);
